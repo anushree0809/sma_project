@@ -1,0 +1,3 @@
+"""
+Analytics modules package initialization
+"""

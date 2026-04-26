@@ -85,8 +85,13 @@ function Analytics({ caseId, moduleId }) {
     setLoading(true);
     setError('');
     setTimeout(() => {
-      const caseAnalytics = analyticsDataByCase[caseId] || {};
-      const fakeResults = caseAnalytics[moduleId] || { message: 'No demo data available for this module/case.' };
+      const defaultAnalytics = analyticsDataByCase[9]; // Netflix demo data
+
+const caseAnalytics =
+  analyticsDataByCase[caseId] || defaultAnalytics;
+
+const fakeResults =
+  caseAnalytics[moduleId] || defaultAnalytics[moduleId];
       setResults(fakeResults);
       setLoading(false);
     }, 600);
